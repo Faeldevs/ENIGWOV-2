@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitButton = document.getElementById('submitPasswordBtn');
     const messageBox = document.getElementById('messageBox'); 
 
-    const correctPassword = 'H'; // A resposta do enigma (letra H)
+    const correctPassword = 'NARUTO'; // A resposta do enigma (NARUTO)
 
     const checkPassword = () => {
         const userAnswer = passwordInput.value.trim();
