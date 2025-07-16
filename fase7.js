@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitButton = document.getElementById('submitPasswordBtn');
     const messageBox = document.getElementById('messageBox'); 
 
-    const correctPassword = 'GAMBITO'; // A senha final do jogo!
+    const correctPassword = 'GAMBITO'; // A senha da Fase 7
 
     const checkPassword = () => {
         const userAnswer = passwordInput.value.trim();
@@ -19,17 +19,15 @@ document.addEventListener('DOMContentLoaded', () => {
         messageBox.textContent = '';
 
         if (userAnswer.toUpperCase() === correctPassword.toUpperCase()) {
-            messageBox.textContent = 'Parabéns! Você desvendou o último enigma e concluiu o desafio!'; 
+            messageBox.textContent = 'Parabéns! Você dominou a estratégia! Preparando para o próximo desafio...'; 
             messageBox.classList.add('show', 'success'); 
-            localStorage.setItem('fase7Concluida', 'true'); // Marca a fase final como concluída
+            localStorage.setItem('fase7Concluida', 'true'); // Marca a fase 7 como concluída
 
             setTimeout(() => {
-                alert('MUITO BEM! Você é um verdadeiro Mestre dos Enigmas! Todas as fases foram concluídas!');
-                localStorage.clear(); // Limpa todo o progresso para reiniciar o jogo
-                window.location.href = 'index.html'; // Volta para a página inicial
+                window.location.href = 'fase8.html'; // Redireciona para a próxima fase!
             }, 2000); 
         } else {
-            alert('Errado! O último sacrifício ainda não foi compreendido. Tente novamente!'); 
+            alert('Errado! Tente novamente!'); 
             passwordInput.value = ''; 
         }
     };

@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.location.href = 'fase4.html'; // Redireciona para a Fase 4!
             }, 2000); 
         } else {
-            alert('Errado!'); 
+            alert('Errado! Ta muito easy'); 
             passwordInput.value = ''; 
         }
     };

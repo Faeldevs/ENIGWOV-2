@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.location.href = 'fase2.html'; 
             }, 1500); 
         } else {
-            alert('Errado!'); 
+            alert('Errado! Ta facil'); 
             passwordInput.value = ''; 
         }
     };

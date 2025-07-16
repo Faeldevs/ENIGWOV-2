@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.location.href = 'fase3.html'; 
             }, 1500); 
         } else {
-            alert('Errado!'); 
+            alert('Errado! Ta fraco em???'); 
             passwordInput.value = ''; 
         }
     };
