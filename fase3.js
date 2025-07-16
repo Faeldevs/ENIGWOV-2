@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitButton = document.getElementById('submitPasswordBtn');
     const messageBox = document.getElementById('messageBox'); 
 
-    const correctPassword = 'NARUTO'; // A resposta do enigma (NARUTO)
+    const correctPassword = 'H'; // A resposta do enigma (letra H)
 
     const checkPassword = () => {
         const userAnswer = passwordInput.value.trim();
@@ -19,14 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
         messageBox.textContent = '';
 
         if (userAnswer.toUpperCase() === correctPassword.toUpperCase()) {
-            messageBox.textContent = 'Parabéns! Você decifrou o enigma final! Desafio Concluído!'; 
+            messageBox.textContent = 'Parabéns! Você decifrou a terceira fase! Preparando para o próximo enigma...'; 
             messageBox.classList.add('show', 'success'); 
             localStorage.setItem('fase3Concluida', 'true'); 
 
             setTimeout(() => {
-                alert('Você completou todas as fases! Excelente trabalho, Mestre dos Enigmas!');
-                localStorage.clear(); 
-                window.location.href = 'index.html'; 
+                window.location.href = 'fase4.html'; // Redireciona para a Fase 4!
             }, 2000); 
         } else {
             alert('Errado!'); 
