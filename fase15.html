@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desvende o Código Secreto - Fase 15</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://static.thenounproject.com/png/1572979-200.png" type="image/png">
+    <style>
+        /* Estilos específicos para a Forca */
+        #hangman-game {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        #word-display {
+            font-family: 'Creepster', cursive;
+            font-size: 3.5rem;
+            letter-spacing: 15px;
+            margin-bottom: 2rem;
+            color: var(--accent-color);
+            text-shadow: var(--glow-effect);
+        }
+
+        #wrong-guesses {
+            font-size: 1.2rem;
+            color: var(--error-color);
+            margin-bottom: 1.5rem;
+        }
+
+        #letters-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+            gap: 10px;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            background-color: var(--card-bg);
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.1);
+        }
+
+        .letter-button {
+            background-color: var(--accent-color);
+            color: var(--bg-dark);
+            border: none;
+            border-radius: 5px;
+            padding: 10px 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            text-transform: uppercase;
+        }
+
+        .letter-button:hover:not(:disabled) {
+            background-color: #00cccc; 
+            transform: translateY(-2px);
+        }
+
+        .letter-button:disabled {
+            background-color: #333;
+            color: #777;
+            cursor: not-allowed;
+        }
+
+        #game-message {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        #game-message.show {
+            display: block;
+            opacity: 1;
+        }
+
+        #game-message.success {
+            background-color: rgba(76, 175, 80, 0.2);
+            color: var(--success-color);
+            border: 1px solid var(--success-color);
+            box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+        }
+
+        #game-message.error {
+            background-color: rgba(233, 69, 96, 0.2);
+            color: var(--error-color);
+            border: 1px solid var(--error-color);
+            box-shadow: 0 0 10px rgba(233, 69, 96, 0.5);
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            #word-display {
+                font-size: 2.5rem;
+                letter-spacing: 10px;
+            }
+            #letters-container {
+                gap: 8px;
+                max-width: 90%;
+            }
+            .letter-button {
+                font-size: 1rem;
+                padding: 8px 0;
+            }
+            #wrong-guesses {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #word-display {
+                font-size: 2rem;
+                letter-spacing: 8px;
+            }
+            #letters-container {
+                gap: 5px;
+                grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+            }
+            .letter-button {
+                font-size: 0.9rem;
+                padding: 6px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    <div class="main-container">
+        <h1>Fase 15: O Criador Poderoso</h1>
+        <p>Sou professor e criei as mais belas e poderosas,<br>
+        Quem sou eu?</p>
+        
+        <div id="hangman-game">
+            <div id="word-display"></div>
+            <div id="wrong-guesses">Erros: 0 / 3</div> 
+            <div id="letters-container"></div>
+            <div id="game-message" class="message-box"></div>
+        </div>
+    </div>
+
+    <script src="fase15.js"></script>
+</body>
+</html>

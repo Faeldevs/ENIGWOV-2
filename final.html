@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parabéns! Fim do Enigma.</title>
+    <style>
+        @keyframes blink-cursor {
+            from, to { border-color: transparent; }
+            50% { border-color: #00ff9d; }
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #0c0c27;
+            color: #00ff9d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        #final-container {
+            background-color: #1a1a3a;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 255, 157, 0.5);
+            border: 3px solid #00ff9d;
+            max-width: 700px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #ffffff;
+            text-shadow: 0 0 8px #00ff9d;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        #final-message {
+            font-size: 1.4em;
+            line-height: 1.6;
+            text-align: left;
+            white-space: pre-wrap; /* Mantém a formatação do texto */
+            border-right: 3px solid #00ff9d; /* Simula o cursor de digitação */
+            padding-right: 5px;
+            animation: blink-cursor 0.75s step-end infinite;
+            min-height: 150px;
+        }
+
+        #creator-signature {
+            font-size: 1.5em;
+            margin-top: 30px;
+            text-align: right;
+            color: #ffffff;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        #restart-button {
+            display: none; /* Começa oculto */
+            margin-top: 40px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #00ff9d;
+            color: #0c0c27;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        #restart-button:hover {
+            background-color: #ffffff;
+            box-shadow: 0 0 15px #00ff9d;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="final-container">
+        <h1>ENIGMA CONCLUÍDO!</h1>
+        <p id="final-message"></p>
+        <p id="creator-signature"></p>
+        <button id="restart-button">Reiniciar Aventura</button>
+    </div>
+
+    <script src="final.js"></script>
+</body>
+</html>

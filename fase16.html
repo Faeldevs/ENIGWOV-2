@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fase 16 - O Cofre do Laboratório</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #0c0c27;
+            color: #00ff9d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        #game-container {
+            background-color: #1a1a3a;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(0, 255, 157, 0.4);
+            border: 2px solid #00ff9d;
+            max-width: 600px;
+        }
+        h1 {
+            color: #ffffff;
+            text-shadow: 0 0 5px #00ff9d;
+        }
+        #riddle-display {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #000;
+            border: 1px dashed #00ff9d;
+            border-radius: 5px;
+            min-height: 50px;
+        }
+        #answer-input {
+            padding: 10px;
+            font-size: 1.2em;
+            width: 150px;
+            text-align: center;
+            background-color: #e0e0e0;
+            color: #1a1a3a;
+            border: 2px solid #00ff9d;
+            border-radius: 5px;
+        }
+        #submit-button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #00ff9d;
+            color: #0c0c27;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        #submit-button:hover {
+            background-color: #ffffff;
+            box-shadow: 0 0 15px #00ff9d;
+        }
+        #discovered-digits {
+            margin-top: 30px;
+            font-size: 1.2em;
+        }
+        #digits-container {
+            font-size: 2em;
+            letter-spacing: 15px;
+            padding: 10px;
+            color: #ffffff;
+            min-height: 40px;
+        }
+        #final-keypad {
+            margin-top: 20px;
+            display: none; /* Começa oculto */
+        }
+        #final-input {
+            padding: 15px;
+            font-size: 1.5em;
+            width: 200px;
+            text-align: center;
+            letter-spacing: 5px;
+            background-color: #e0e0e0;
+            color: #1a1a3a;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        .message.show {
+            opacity: 1;
+        }
+        .message.success {
+            color: #00ff9d;
+        }
+        .message.error {
+            color: #ff4d4d;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <h1>Fase 16: O Cofre do Laboratório</h1>
+        <p>"O passado ilumina o futuro. Observe, calcule e conecte."</p>
+        <h4 >CUIDADO! SE ERRAR, REINICIARÁ TUDO<---------</h4>
+        <div id="riddle-container">
+            <div id="riddle-display"></div>
+            <input type="number" id="answer-input" placeholder="Resultado...">
+            <button id="submit-button">Verificar</button>
+        </div>
+        
+        <div id="discovered-digits">
+            <p>Dígitos Descobertos:</p>
+            <div id="digits-container">_ _ _ _</div>
+        </div>
+        
+        <div id="final-keypad">
+            <p>Digite a senha final de 4 dígitos:</p>
+            <input type="text" id="final-input" maxlength="4" placeholder="SENHA">
+        </div>
+        
+        <p id="game-message" class="message"></p>
+    </div>
+
+    <script src="fase16.js"></script>
+</body>
+</html>
