@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitButton = document.getElementById('submitPasswordBtn');
     const messageBox = document.getElementById('messageBox'); 
 
-    const correctPassword = 'UTERO'; // A senha para a Fase 12!
+    const correctPassword = ['UTERO', 'ÚTERO'];  // A senha para a Fase 12!
 
     const checkPassword = () => {
         const userAnswer = passwordInput.value.trim();
