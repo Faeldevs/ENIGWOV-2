@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Lógica do Jogo da Fase 16 ---
     const riddles = [
-        { question: "Número de vogais em 'LOBO'", answer: 2 },
-        { question: "Resultado de (3 * 3) - 1", answer: 8 },
-        { question: "Número de vezes que o Brasil ganhou a copa", answer: 5 },
+        { question: "Quantos átomos de hidrogênio há em uma molécula de água?", answer: 2 },
+        { question: "Quantos tentáculos possui um polvo?", answer: 8 },
+        { question: "Qual jogo do Resident Evil se passa no continente Africano?", answer: 5 },
         { question: "Quantos anos tinha mozart quando compôs sua primeira musica", answer: 5 } // 16 - 4 = 12, mas a resposta é o dígito final. A pista é "conectar". O dígito é 2.
     ];
     
