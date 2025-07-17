@@ -3,28 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENIGWOV, NOVO MARCO - Início</title>
+    <title>Desvende o Código Secreto - Início</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="https://icons8.com/icon/MP0nlf1uL9rw/detective" type="image/png">
+    <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/060/467/586/non_2x/anonymous-person-silhouette-wearing-hat-and-suit-minimalist-graphic-representation-vector.jpg" type="image/png">
 </head>
 <body class="landing-page-body">
     <div class="stars"></div>
     <div class="twinkling"></div>
     <div class="main-container landing-page">
         <h1 class="landing-title">Bem-vindo(a) ao ENIGWOV 2</h1>
-        <p class="landing-intro">Você se considera um verdadeiro decifrador de códigos?</p>
-        <p class="landing-intro">Você se garante? vamos ver!!!</p>
+        <p class="landing-intro">Você considera um verdadeiro decifrador de códigos?</p>
+        <p class="landing-intro">Você garante? Vamos ver!!!</p>
+        
+        <p class="landing-intro" style="margin-top: 1.5rem;">Para começar, qual é o seu nome?</p>
+        <input type="text" id="playerNameInput" class="password-input" placeholder="Seu nome aqui..." style="max-width: 350px;">
+        
         <button id="startChallengeBtn" class="action-button">Iniciar o Desafio <span class="arrow">→</span></button>
         <p class="warning-text">Atenção: ANOTE A SENHA PARA CADA FASE.</p>
     </div>
 
     <script>
         document.getElementById('startChallengeBtn').addEventListener('click', () => {
-            // Limpa qualquer progresso anterior para um novo início
-            localStorage.clear();
-            // Redireciona para a primeira fase
-            window.location.href = 'fase1.html';
+            const playerName = document.getElementById('playerNameInput').value.trim();
+            if (playerName) {
+                // Limpa qualquer progresso anterior para um novo início
+                localStorage.clear();
+                // Salva o nome do jogador no localStorage
+                localStorage.setItem('playerName', playerName);
+                // Redireciona para a primeira fase
+                window.location.href = 'fase1.html';
+            } else {
+                alert('Por favor, digite seu nome para começar o desafio!');
+            }
         });
     </script>
 </body>
