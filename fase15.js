@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.location.href = 'fase16.html'; // Redireciona para a próxima fase
             }, 2500);
         } else if (wrongGuessesCount >= maxWrongGuesses) { // Perdeu
-            gameMessage.textContent = `Você errou demais! A palavra era: ${hangmanWord}. A forca será reiniciada!`; // Mensagem para reiniciar
+            gameMessage.textContent = `Você errou demais! A forca será reiniciada!`; // Mensagem para reiniciar
             gameMessage.classList.add('show', 'error');
             disableAllLetterButtons();
             
