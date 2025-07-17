@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- Lógica de Segurança: Verifica se a Fase 12 foi concluída ---
-    //const fase12Concluida = localStorage.getItem('fase12Concluida');
+    const fase12Concluida = localStorage.getItem('fase12Concluida');
     if (!fase12Concluida) {
         alert('Acesso negado! Você deve completar a Fase 12 primeiro.');
         window.location.href = 'fase1.html'; // Redireciona para a Fase 1 se tentar pular
