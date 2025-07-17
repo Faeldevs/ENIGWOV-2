@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desvende o Código Secreto - Fase 14</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://static.thenounproject.com/png/1572979-200.png" type="image/png">
+    <style>
+        /* Estilos específicos para o Quebra-Cabeça */
+        #puzzle-container {
+            position: relative;
+            width: 600px; /* Largura padrão para desktop */
+            height: 600px; /* Altura padrão para desktop (ajustado por JS) */
+            border: 2px solid var(--accent-color);
+            margin: 2rem auto 1rem auto; /* Ajuste a margem inferior */
+            background-color: var(--bg-dark); 
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
+            overflow: hidden; 
+        }
+
+        .puzzle-piece {
+            position: absolute;
+            background-size: 600px 600px; /* Tamanho da imagem original (será ajustado por JS) */
+            cursor: grab;
+            border: 1px solid rgba(0, 255, 0, 0.2); 
+            box-sizing: border-box; 
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, left 0.3s ease, top 0.3s ease; 
+            touch-action: none; /* Previne o comportamento padrão de toque (scroll/zoom) */
+        }
+        
+        .puzzle-piece.dragging {
+            z-index: 1000;
+            cursor: grabbing;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+            transition: none; 
+        }
+
+        .puzzle-piece.correct {
+            cursor: default;
+            border-color: var(--success-color); 
+            box-shadow: 0 0 5px var(--success-color);
+        }
+
+        #solved-message {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: rgba(33, 125, 51, 0.2);
+            color: var(--success-color);
+            border: 1px solid var(--success-color);
+            border-radius: 8px;
+            font-weight: 700;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        #solved-message.show {
+            display: block;
+            opacity: 1;
+        }
+
+        #reset-button { /* Novo ID para o botão de reset */
+            margin-top: 1.5rem;
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            background: linear-gradient(45deg, #a0a0a0, #707070); /* Cinza para o botão de reset */
+            color: var(--bg-dark);
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(160, 160, 160, 0.4);
+        }
+
+        #reset-button:hover {
+            box-shadow: 0 0 15px #a0a0a0, 0 0 25px #a0a0a0;
+            transform: translateY(-3px);
+            background: linear-gradient(45deg, #707070, #a0a0a0);
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 1rem; 
+            }
+            h1 { font-size: 2.2rem; }
+            p { font-size: 0.95rem; }
+
+            #puzzle-container {
+                width: 95%; 
+                max-width: 400px; 
+            }
+
+            .puzzle-piece {
+                border-width: 0.5px; 
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 1.8rem; margin-bottom: 1rem;}
+            p { font-size: 0.85rem; }
+            .main-container {
+                padding: 0.8rem;
+            }
+            #puzzle-container {
+                max-width: 280px; 
+            }
+        }
+
+        @media (max-width: 320px) { 
+            h1 { font-size: 1.5rem; }
+            #puzzle-container {
+                max-width: 200px; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    <div class="main-container">
+        <h1>Fase 14: O Quebra-Cabeça Visual</h1>
+        <p>Nada que um bom Quebra-Cabeça né? <br>
+        Em caso de bug, use o botão para reiniciar as peças quantas vezes necessário.</p>
+        
+        <div id="puzzle-container">
+            </div>
+
+        <button id="reset-button">Reiniciar Peças</button>
+        <p>fique tranquilo, as peças encaixadas nao reiniciam</p>
+
+        <div id="solved-message" class="message-box"></div>
+    </div>
+
+    <script src="fase14.js"></script>
+</body>
+</html>
